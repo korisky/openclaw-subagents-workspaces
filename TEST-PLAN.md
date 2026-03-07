@@ -11,17 +11,17 @@
 **Command**: `Create a hello world Python script in /tmp/test-jarvis`
 **Expected**:
 1. JARVIS recognizes as code task (Delegation Trigger)
-2. JARVIS spawns Code Agent via `sessions_spawn`
+2. JARVIS spawns Codex Builder via `sessions_spawn`
 3. Discord thread created for the sub-agent
-4. Code Agent creates the script
-5. Code Agent announces back with structured summary
+4. Codex Builder creates the script
+5. Codex Builder announces back with structured summary
 6. JARVIS relays result to you in main channel
 **Pass if**: File exists at `/tmp/test-jarvis/hello.py` and JARVIS relays the result.
 
 ### Test 1.3 — Agent Isolation
 **Command**: `openclaw agents list --bindings` (CLI)
-**Expected**: Two agents listed — `jarvis` (default, bound to discord) and `code` (no binding).
-**Pass if**: Output shows both agents with correct roles.
+**Expected**: Six agents listed — `main` (default, bound to discord) + 5 specialists (delivery, codex-builder, kimi-analyst, deepseek-challenger, librarian).
+**Pass if**: Output shows all 6 agents with correct roles and models.
 
 ### Test 1.4 — Sub-Agent Status Check
 **Command**: Send on Discord: `what's happening?`
