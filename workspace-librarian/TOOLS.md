@@ -7,9 +7,18 @@
 - Shell execution for file management
 
 ## Workspace Memory Locations
-- JARVIS: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-jarvis/MEMORY.md
-- Delivery: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-delivery/MEMORY.md
-- Codex Builder: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-codex/MEMORY.md
-- Kimi Analyst: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-kimi/MEMORY.md
-- DeepSeek Challenger: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-deepseek/MEMORY.md
-- Librarian: /home/roylic/.openclaw/openclaw-subagents-workspaces/workspace-librarian/MEMORY.md
+
+All workspaces live under the `openclaw-subagents-workspaces/` directory
+(sibling to this workspace). Each has a `MEMORY.md`:
+
+- JARVIS: `../workspace-jarvis/MEMORY.md`
+- Delivery: `../workspace-delivery/MEMORY.md`
+- Codex Builder: `../workspace-codex/MEMORY.md`
+- Kimi Analyst: `../workspace-kimi/MEMORY.md`
+- DeepSeek Challenger: `../workspace-deepseek/MEMORY.md`
+- Librarian: `./MEMORY.md` (this workspace)
+
+## Conventions
+- Use relative paths from the workspaces root, not absolute paths
+- When summarizing sessions, write to the relevant agent's MEMORY.md
+- Keep memory files concise — prune stale entries when consolidating

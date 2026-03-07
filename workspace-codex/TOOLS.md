@@ -15,6 +15,11 @@
 - `bd sync` — sync beads state
 - `bd update <id> --status <status>` — update task status
 
+## Additional Commands
+- `bd list --type blocker --priority 0 --status open --json` — check for HALTs before starting work
+- `bd mol pour <molecule-name> --args "title=..."` — create structured task hierarchy (L3/L4)
+- `bd update <id> --claim` — claim a task (combine with `--status in_progress`)
+
 ## Conventions
 - Run tests before announcing completion
 - Commit with meaningful messages

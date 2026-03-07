@@ -1,40 +1,28 @@
-# TOOLS.md - Local Notes
+# JARVIS — Tools & Environment
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Session Tools
+- `sessions_spawn` — spawn a sub-agent (Delivery, Codex, Kimi, DeepSeek, Librarian)
+- `sessions_list` — list active/recent sub-agent sessions
+- `sessions_history` — read a sub-agent's conversation history
 
-## What Goes Here
+## Memory Tools
+- `memory_search` — semantic search across workspace memories
+- `memory_get` — read a specific memory file
 
-Things like:
+## Beads CLI (in project directories)
+- `bd list --json` — all tasks/gates/blockers
+- `bd ready --json` — tasks available to work on
+- `bd update <id> --status <status>` — reset orphaned tasks
+- `bd close <id> --reason "<summary>"` — close gates after human decision
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+## Environment
+- Proxy: `http://127.0.0.1:7897`
+- Gateway: `http://127.0.0.1:18789` (systemd user service)
+- Restart gateway: `systemctl --user restart openclaw-gateway`
+- Logs: `~/.openclaw/logs/`
+- Dashboard: `http://127.0.0.1:18789/` (control-ui)
 
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+## Notes
+- You do NOT execute code or run tests — delegate to specialists
+- Sub-agents cannot call session tools (by design)
+- Beads commands are for status checks and gate management only
