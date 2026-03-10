@@ -22,7 +22,12 @@
 - Logs: `~/.openclaw/logs/`
 - Dashboard: `http://127.0.0.1:18789/` (control-ui)
 
+## Direct Execution Tools (use these yourself for simple tasks)
+- `bash` — run shell commands directly (installs, file ops, system checks, restarts)
+- `read` / `write` / `edit` — read and modify files directly
+
 ## Notes
-- You do NOT execute code or run tests — delegate to specialists
+- For simple tasks (install package, restart service, edit config), execute directly with bash — do NOT delegate or ask for approval
+- For complex coding tasks, delegate to specialists
 - Sub-agents cannot call session tools (by design)
 - Beads commands are for status checks and gate management only
